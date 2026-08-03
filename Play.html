@@ -1,0 +1,194 @@
+<<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Play - Lotto Winners USA</title>
+
+<link rel="stylesheet" href="css/style.css">
+
+<style>
+.number-grid{
+display:grid;
+grid-template-columns:repeat(5,1fr);
+gap:10px;
+max-width:500px;
+margin:30px auto;
+}
+
+.number{
+background:#FFD700;
+color:#0d2b6b;
+padding:15px;
+text-align:center;
+border-radius:10px;
+font-weight:bold;
+cursor:pointer;
+}
+
+.number.selected{
+background:#00cc66;
+color:white;
+}
+
+.ticket{
+text-align:center;
+margin:30px;
+font-size:22px;
+}
+
+.controls{
+text-align:center;
+margin-bottom:40px;
+}
+
+button{
+padding:15px 25px;
+margin:10px;
+border:none;
+border-radius:8px;
+background:#FFD700;
+font-size:18px;
+font-weight:bold;
+cursor:pointer;
+}
+</style>
+
+</head>
+
+<body>
+
+<header>
+<nav class="navbar">
+<div class="logo">
+<h1>Lotto Winners USA</h1>
+</div>
+
+<ul class="menu">
+<li><a href="index.html">Home</a></li>
+<li><a href="play.html">Play</a></li>
+<li><a href="results.html">Results</a></li>
+</ul>
+
+</nav>
+</header>
+
+<section class="hero">
+
+<h2>Demo Jackpot</h2>
+
+<h1>$450,000,000</h1>
+
+<p>Select 5 numbers between 1 and 90.</p>
+
+</section>
+
+<div class="number-grid" id="grid"></div>
+
+<div class="ticket">
+
+<h3>Your Numbers</h3>
+
+<p id="ticket">None Selected</p>
+
+</div>
+
+<div class="controls">
+
+<button onclick="quickPick()">Quick Pick</button>
+
+<button onclick="clearTicket()">Clear</button>
+
+</div>
+
+<script>
+
+const grid=document.getElementById("grid");
+const ticket=document.getElementById("ticket");
+
+let selected=[];
+
+for(let i=1;i<=90;i++){
+
+let div=document.createElement("div");
+
+div.className="number";
+
+div.innerHTML=i;
+
+div.onclick=function(){
+
+if(selected.includes(i)){
+
+selected=selected.filter(n=>n!==i);
+
+div.classList.remove("selected");
+
+}else{
+
+if(selected.length<5){
+
+selected.push(i);
+
+div.classList.add("selected");
+
+}
+
+}
+
+ticket.innerHTML=selected.length?selected.join(" - "):"None Selected";
+
+};
+
+grid.appendChild(div);
+
+}
+
+function quickPick(){
+
+clearTicket();
+
+while(selected.length<5){
+
+let n=Math.floor(Math.random()*90)+1;
+
+if(!selected.includes(n)){
+
+selected.push(n);
+
+}
+
+}
+
+document.querySelectorAll(".number").forEach(box=>{
+
+if(selected.includes(Number(box.innerHTML))){
+
+box.classList.add("selected");
+
+}
+
+});
+
+ticket.innerHTML=selected.join(" - ");
+
+}
+
+function clearTicket(){
+
+selected=[];
+
+ticket.innerHTML="None Selected";
+
+document.querySelectorAll(".number").forEach(box=>{
+
+box.classList.remove("selected");
+
+});
+
+}
+
+</script>
+
+</body>
+</html>
