@@ -95,3 +95,32 @@ cursor:pointer;
     font-weight:bold;
     cursor:pointer;
 }
+#balls{
+    display:flex;
+    justify-content:center;
+    gap:15px;
+    flex-wrap:wrap;
+    margin:30px 0;
+}
+
+.ball{
+    width:80px;
+    height:80px;
+    border-radius:50%;
+    background:#FFD700;
+    color:#0d2b6b;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    font-size:32px;
+    font-weight:bold;
+    box-shadow:0 4px 10px rgba(0,0,0,.3);
+}
+
+.jackpot{
+    text-align:center;
+    font-size:32px;
+    font-weight:bold;
+    color:#00ff66;
+    margin-top:20px;
+}
