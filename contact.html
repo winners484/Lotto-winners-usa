@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Contact Us - Lotto Winners USA</title>
+
+<link rel="stylesheet" href="style.css">
+
+<style>
+.container{
+    max-width:700px;
+    margin:50px auto;
+    padding:20px;
+}
+
+.contact-box{
+    background:#ffffff;
+    color:#222;
+    padding:30px;
+    border-radius:12px;
+    box-shadow:0 4px 10px rgba(0,0,0,.2);
+}
+
+.contact-box h2{
+    color:#0d2b6b;
+    text-align:center;
+}
+
+.contact-box input,
+.contact-box textarea{
+    width:100%;
+    padding:12px;
+    margin:10px 0;
+    border:1px solid #ccc;
+    border-radius:8px;
+    box-sizing:border-box;
+}
+
+.contact-box textarea{
+    height:140px;
+    resize:vertical;
+}
+
+.send-btn{
+    width:100%;
+    padding:14px;
+    background:#FFD700;
+    color:#0d2b6b;
+    border:none;
+    border-radius:8px;
+    font-size:18px;
+    font-weight:bold;
+    cursor:pointer;
+}
+
+.info{
+    margin-top:25px;
+    line-height:1.8;
+}
+
+.notice{
+    margin-top:20px;
+    font-size:14px;
+    color:#666;
+    text-align:center;
+}
+</style>
+
+</head>
+
+<body>
+
+<header>
+<h1>Lotto Winners USA</h1>
+
+<nav>
+<a href="index.html">Home</a> |
+<a href="play.html">Play</a> |
+<a href="results.html">Results</a> |
+<a href="login.html">Login</a> |
+<a href="register.html">Register</a> |
+<a href="tickets.html">My Tickets</a> |
+<a href="winners.html">Winners</a> |
+<a href="contact.html">Contact</a>
+</nav>
+</header>
+
+<div class="container">
+
+<div class="contact-box">
+
+<h2>Contact Us</h2>
+
+<input type="text" id="name" placeholder="Your Name">
+
+<input type="email" id="email" placeholder="Your Email">
+
+<textarea id="message" placeholder="Type your message..."></textarea>
+
+<button class="send-btn" onclick="sendMessage()">
+Send Message
+</button>
+
+<div class="info">
+<p><strong>Email:</strong> support@lottowinnersusa.demo</p>
+<p><strong>Phone:</strong> (555) 123-4567 (Demo)</p>
+<p><strong>Office:</strong> Demo Office, New York, USA</p>
+</div>
+
+<p class="notice">
+This is a demonstration website. The contact details above are fictional.
+</p>
+
+</div>
+
+</div>
+
+<script>
+function sendMessage(){
+
+let name=document.getElementById("name").value;
+let email=document.getElementById("email").value;
+let message=document.getElementById("message").value;
+
+if(name==="" || email==="" || message===""){
+    alert("Please complete all fields.");
+    return;
+}
+
+alert("Thank you! Your demo message has been submitted.");
+
+document.getElementById("name").value="";
+document.getElementById("email").value="";
+document.getElementById("message").value="";
+}
+</script>
+
+</body>
+</html>
