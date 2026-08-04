@@ -45,27 +45,27 @@
 </div>
 
 <script>
-function draw(){
 
+function draw() {
     let s = new Set();
 
-    while(s.size < 5){
-        s.add(Math.floor(Math.random()*90)+1);
+    while (s.size < 5) {
+        s.add(Math.floor(Math.random() * 90) + 1);
     }
 
-    let numbers = [...s].sort((a,b)=>a-b);
+    let numbers = [...s].sort((a, b) => a - b);
 
-    let html = "";
+    document.getElementById("balls").innerHTML =
+        numbers.map(n => `<div class="ball">${String(n).padStart(2,'0')}</div>`).join("");
 
-    numbers.forEach(function(n){
-        html += '<div class="ball">'+String(n).padStart(2,'0')+'</div>';
-    });
+    document.getElementById("output").textContent = "";
 
-    document.getElementById("output").innerHTML = html;
-
-    document.getElementById("message").innerHTML =
-    "🎉 Demo Jackpot: <strong>$450,000,000</strong><br>Good Luck!";
+    document.getElementById("jackpot").innerHTML =
+        "🎉 <strong>Congratulations!</strong><br>" +
+        "Demo Jackpot: <span style='color:#00ff66'>$450,000,000</span><br>" +
+        "Good Luck!";
 }
+
 </script>
 
 </body>
