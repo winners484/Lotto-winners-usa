@@ -1,36 +1,12 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Play - Lotto Winners USA</title>
+function draw() {
+    let s = new Set();
 
-    <link rel="stylesheet" href="css/style.css">
-</head>
+    while (s.size < 5) {
+        s.add(Math.floor(Math.random() * 90) + 1);
+    }
 
-<body>
-
-<header>
-    <h1>Lotto Winners USA</h1>
-
-    <nav>
-        <a href="index.html">Home</a>
-        <a href="play.html">Play</a>
-        <a href="results.html">Results</a>
-    </nav>
-</header>
-
-<section class="container">
-    <h2>Pick 5 Numbers</h2>
-
-    <button onclick="draw()">
-        Run Demo Draw
-    </button>
-
-    <h3 id="output"></h3>
-</section>
-
-<script src="script.js"></script>
-
-</body>
-</html>
+    document.getElementById("output").textContent =
+        "Winning Numbers: " +
+        [...s].sort((a, b) => a - b).join(", ") +
+        " | Demo Jackpot: $450,000,000";
+}
