@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Register - Lotto Winners USA</title>
+
+<link rel="stylesheet" href="style.css">
+
+<style>
+.register-box{
+    max-width:450px;
+    margin:60px auto;
+    background:#fff;
+    color:#222;
+    padding:30px;
+    border-radius:12px;
+    box-shadow:0 5px 15px rgba(0,0,0,.2);
+}
+
+.register-box h2{
+    text-align:center;
+    color:#0d2b6b;
+    margin-bottom:20px;
+}
+
+.register-box input{
+    width:100%;
+    padding:12px;
+    margin:10px 0;
+    border:1px solid #ccc;
+    border-radius:8px;
+    font-size:16px;
+    box-sizing:border-box;
+}
+
+.register-btn{
+    width:100%;
+    padding:14px;
+    background:#FFD700;
+    color:#0d2b6b;
+    border:none;
+    border-radius:8px;
+    font-size:18px;
+    font-weight:bold;
+    cursor:pointer;
+}
+
+.note{
+    text-align:center;
+    margin-top:20px;
+}
+</style>
+</head>
+
+<body>
+
+<header>
+<h1>Lotto Winners USA</h1>
+
+<nav>
+<a href="index.html">Home</a> |
+<a href="play.html">Play</a> |
+<a href="results.html">Results</a> |
+<a href="login.html">Login</a> |
+<a href="register.html">Register</a>
+</nav>
+</header>
+
+<div class="register-box">
+
+<h2>Create Demo Account</h2>
+
+<input type="text" id="name" placeholder="Full Name">
+
+<input type="email" id="email" placeholder="Email Address">
+
+<input type="password" id="password" placeholder="Password">
+
+<input type="password" id="confirm" placeholder="Confirm Password">
+
+<button class="register-btn" onclick="registerUser()">
+Create Demo Account
+</button>
+
+<p class="note">
+Already have an account?
+<a href="login.html">Sign In</a>
+</p>
+
+</div>
+
+<script>
+function registerUser(){
+
+let name=document.getElementById("name").value;
+let email=document.getElementById("email").value;
+let password=document.getElementById("password").value;
+let confirm=document.getElementById("confirm").value;
+
+if(name==="" || email==="" || password==="" || confirm===""){
+    alert("Please complete all fields.");
+    return;
+}
+
+if(password!==confirm){
+    alert("Passwords do not match.");
+    return;
+}
+
+alert("Demo account created successfully!");
+
+window.location.href="login.html";
+
+}
+</script>
+
+</body>
+</html>
