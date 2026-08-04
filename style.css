@@ -141,3 +141,31 @@ cursor:pointer;
     margin-top:20px;
     box-shadow:0 5px 15px rgba(0,0,0,.3);
 }
+.hero{
+    text-align:center;
+    padding:80px 20px;
+    background:linear-gradient(135deg,#071b44,#0d2b6b);
+}
+
+.subtitle{
+    font-size:22px;
+    color:#ddd;
+    margin:15px 0 40px;
+}
+
+.jackpot-card{
+    max-width:650px;
+    margin:0 auto 40px;
+    background:#ffffff;
+    color:#071b44;
+    padding:30px;
+    border-radius:16px;
+    box-shadow:0 8px 20px rgba(0,0,0,.3);
+}
+
+.jackpot{
+    font-size:56px;
+    color:#00a651;
+    font-weight:bold;
+    margin:20px 0;
+}
