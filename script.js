@@ -5,7 +5,7 @@ function draw() {
         s.add(Math.floor(Math.random() * 90) + 1);
     }
 
-    document.getElementById("o").textContent =
+    document.getElementById("output").textContent =
         "Winning Numbers: " +
         [...s].sort((a, b) => a - b).join(", ") +
         " | Demo Jackpot: $450,000,000";
