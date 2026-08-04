@@ -1,3 +1,14 @@
+<section class="container">
+    <h2>Pick 5 Numbers</h2>
+
+    <button onclick="draw()">
+        Run Demo Draw
+    </button>
+
+    <h3 id="output"></h3>
+</section>
+
+<script>
 function draw() {
     let s = new Set();
 
@@ -10,3 +21,7 @@ function draw() {
         [...s].sort((a, b) => a - b).join(", ") +
         " | Demo Jackpot: $450,000,000";
 }
+</script>
+
+</body>
+</html>
