@@ -31,17 +31,26 @@
 </section>
 
 <script>
-function draw() {
+function draw(){
+
     let s = new Set();
 
-    while (s.size < 5) {
-        s.add(Math.floor(Math.random() * 90) + 1);
+    while(s.size < 5){
+        s.add(Math.floor(Math.random()*90)+1);
     }
 
-    document.getElementById("output").textContent =
-        "Winning Numbers: " +
-        [...s].sort((a, b) => a - b).join(", ") +
-        " | Demo Jackpot: $450,000,000";
+    let numbers = [...s].sort((a,b)=>a-b);
+
+    let html = "";
+
+    numbers.forEach(function(n){
+        html += '<div class="ball">'+String(n).padStart(2,'0')+'</div>';
+    });
+
+    document.getElementById("output").innerHTML = html;
+
+    document.getElementById("message").innerHTML =
+    "🎉 Demo Jackpot: <strong>$450,000,000</strong><br>Good Luck!";
 }
 </script>
 
