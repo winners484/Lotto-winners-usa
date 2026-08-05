@@ -19,3 +19,24 @@ function login() {
     window.location.href = "dashboard.html";
 }
 </script>
+<script>
+function login() {
+
+    let email = document.getElementById("email").value;
+    let password = document.getElementById("password").value;
+
+    if (email === "") {
+        alert("Please enter your email address.");
+        return;
+    }
+
+    if (password === "") {
+        alert("Please enter your password.");
+        return;
+    }
+
+    alert("Welcome to Lotto Winners USA (Demo)!");
+
+    window.location.href = "dashboard.html";
+}
+</script>
