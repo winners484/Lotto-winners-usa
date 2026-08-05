@@ -75,38 +75,38 @@ placeholder="Example: LW-2026-00125">
 
 <button onclick="checkTicket()">
 Check Ticket
-</button>
-
-<div id="result">
-<h3>Ticket Found</h3>
-
-<p><strong>Ticket:</strong> LW-2026-00125</p>
-
-<p><strong>Game:</strong> USA 5/90</p>
-
-<p><strong>Numbers:</strong> 08, 17, 34, 52, 89</p>
-
-<p><strong>Status:</strong> Winner</p>
-
-<p><strong>Prize:</strong> $450,000,000 (Demo)</p>
-</div>
-
-</div>
-
 <script>
 function checkTicket(){
 
-let ticket=document.getElementById("ticket").value.trim();
+    let ticket = document.getElementById("ticket").value.trim().toUpperCase();
 
-if(ticket===""){
-alert("Please enter a ticket number.");
-return;
-}
+    let result = document.getElementById("result");
 
-document.getElementById("result").style.display="block";
+    if(ticket === ""){
+        alert("Please enter a ticket number.");
+        return;
+    }
 
+    if(ticket === "LW-2026-00125"){
+
+        result.style.display = "block";
+
+        result.innerHTML = `
+        <h3>✅ Ticket Found</h3>
+        <p><strong>Ticket:</strong> LW-2026-00125</p>
+        <p><strong>Game:</strong> USA 5/90</p>
+        <p><strong>Numbers:</strong> 08, 17, 34, 52, 89</p>
+        <p><strong>Status:</strong> Winner</p>
+        <p><strong>Prize:</strong> $450,000,000 (Demo)</p>`;
+    } else {
+
+        result.style.display = "block";
+
+        result.innerHTML = `
+        <h3>❌ Ticket Not Found</h3>
+        <p>No demo ticket matches <strong>${ticket}</strong>.</p>`;
+    }
 }
 </script>
-
 </body>
 </html>
