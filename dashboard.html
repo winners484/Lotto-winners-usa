@@ -16,23 +16,42 @@ body{
 }
 
 header{
-    background:#071b44;
-    padding:20px;
+    background:linear-gradient(135deg,#071b44,#0d2b6b);
+    padding:30px;
     text-align:center;
+    border-bottom:4px solid #FFD700;
+}
+
+header h1{
+    margin:0;
+    color:#FFD700;
+    font-size:36px;
+}
 }
 
 .container{
     width:90%;
-    max-width:1000px;
+    max-width:1200px;
     margin:30px auto;
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(300px,1fr));
+    gap:20px;
+
 }
 
 .card{
     background:white;
     color:#071b44;
-    border-radius:12px;
-    padding:20px;
-    margin-bottom:20px;
+    border-radius:15px;
+    padding:25px;
+    box-shadow:0 10px 20px rgba(0,0,0,.2);
+    transition:transform .3s ease, box-shadow .3s ease;
+}
+
+.card:hover{
+    transform:translateY(-5px);
+    box-shadow:0 15px 30px rgba(0,0,0,.3);
+}
 }
 
 .balance{
@@ -43,13 +62,19 @@ header{
 
 .button{
     display:inline-block;
-    margin-top:15px;
+    margin:10px;
+    padding:12px 22px;
     background:#FFD700;
     color:#071b44;
     text-decoration:none;
-    padding:12px 20px;
     border-radius:8px;
     font-weight:bold;
+    transition:background .3s ease;
+}
+
+.button:hover{
+    background:#ffea66;
+}
 }
 </style>
 
